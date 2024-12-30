@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MyCustomFont', sans-serif; 
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+}
+
+header .logo img {
+    width: 100px;
+}
+
+header nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+    font-weight: none;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+}
+
+#home {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.landing-content h1 {
+    font-size: 5rem;
+}
+
+.landing-content p {
+    font-size: 1.2rem;
+}
+
+#meet-the-kontol {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.info-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+.image {
+    flex: 1;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.full-screen {
+    height: 100vh;
+}
+
+@media (max-width: 900px) {
+    #meet-the-kontol {
+        padding: 20px; /* Memberikan padding pada section agar ada ruang di sekitar konten */
+    }
+
+    .info-content {
+        flex-direction: column; /* Mengubah tata letak dari baris ke kolom */
+        align-items: center; /* Menyelaraskan konten ke tengah */
+        width: 100%; /* Pastikan container memenuhi lebar layar */
+    }
+
+    .text {
+        padding-right: 0; /* Menghapus padding pada teks */
+        width: 100%; /* Pastikan teks memenuhi lebar container */
+        padding-bottom: 20px; /* Memberikan ruang di bawah teks */
+    }
+
+    .image {
+        order: -1; /* Memindahkan gambar ke atas */
+        width: 80%; /* Mengurangi lebar gambar agar tidak meluap */
+        margin-bottom: 20px; /* Memberikan ruang di bawah gambar */
+        box-sizing: border-box; /* Menghitung padding dan margin dalam lebar */
+        padding: 10px; /* Menambahkan padding di sekitar gambar */
+    }
+
+    .image img {
+        width: 100%; /* Gambar mengambil seluruh lebar container (80% dari container utama) */
+        height: auto; /* Memastikan gambar tetap proporsional */
+        object-fit: contain; /* Memastikan gambar tampil dengan proporsi yang baik */
+    }
+
+    .text p {
+        margin-bottom: 20px; /* Menambahkan jarak antar paragraf */
+    }
+}
+
+/* Definisikan font kustom */
+@font-face {
+    font-family: 'MyCustomFont'; /* Nama font yang ingin digunakan */
+    src: url('custom-font.ttf') format('truetype'); /* Path menuju file .ttf */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Tombol Burger - hanya muncul di perangkat kecil */
+.burger {
+    display: none;                /* Menyembunyikan tombol burger di desktop */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Menu Burger untuk perangkat kecil */
+@media (max-width: 768px) {
+    .burger {
+        display: block;           /* Menampilkan tombol burger di perangkat kecil */
+    }
+
+    ul.menu {
+        display: none;            /* Sembunyikan menu di perangkat kecil */
+        flex-direction: column;   /* Membuat menu menjadi vertikal */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #f4f4f4;
+        padding: 10px 0;
+    }
+
+    ul.menu.active {
+        display: block;           /* Menampilkan menu ketika tombol burger diklik */
+    }
+
+    ul.menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+footer {
+    background-color: #000; /* Warna latar hitam */
+    color: #fff; /* Warna teks putih */
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+footer .social-links {
+    display: flex;
+    gap: 10px;
+}
+
+footer .social-links a {
+    text-decoration: none;
+}
+
+footer .social-links img {
+    width: 30px; /* Ukuran ikon */
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-links img:hover {
+    transform: scale(1.2); /* Efek zoom saat hover */
+}
